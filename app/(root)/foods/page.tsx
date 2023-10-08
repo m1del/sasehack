@@ -4,7 +4,7 @@ import Food from "../../components/Food";
 import queryFood from "../../dbscripts/queryFood";
 
 export default async function FoodPage() {
-  const foodData = await queryFood("fridge");
+  const foodData = await queryFood("all");
   const foods = [];
   const ids = [];
   foodData.forEach((doc) => {

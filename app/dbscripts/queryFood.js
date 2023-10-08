@@ -18,7 +18,12 @@ const firebaseConfig = {
 };
 
 async function queryData(location) {
-  const q = query(collection(db, "food"), where("location", "==", location));
+  let q = null;
+  if (location == "all") {
+    q = query(collection(db, "food"));
+  } else {
+    q = query(collection(db, "food"), where("location", "==", location));
+  }
 
   const querySnap = await getDocs(q);
   return querySnap;
