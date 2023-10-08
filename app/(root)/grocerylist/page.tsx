@@ -1,5 +1,7 @@
+
 import "../../globals.css";
 import TopBar from "../../components/TopBar";
+import TypeAnim from "../../components/TypeAnim"
 // async function getFood() {
 //   const pb = new PocketBase("http://127.0.0.1:8090");
 
@@ -10,16 +12,21 @@ import TopBar from "../../components/TopBar";
 //   return data as any[];
 // }
 
+
 const tempFood = {
   name: "banana",
   purchase: "October 7th",
 };
 
+
+
 export default async function FoodPage() {
   // const foods = await getFood();
   return (
+    
     <>
-      <TopBar page={"Grocery List"} />
+    <TypeAnim/>
+    <TopBar page={"Grocery List"} />
       <div>
         <div className="food-list">
           <ListInput />
@@ -31,12 +38,14 @@ export default async function FoodPage() {
           <ListInput />
           <ListInput />
           <ListInput />
-          <button className="btn">Add Foods to Pantry</button>
+          <button onClick="AddFoods()" className="btn">Add Foods</button>
         </div>
       </div>
+ 
     </>
   );
 }
+
 
 function ListInput() {
   return (
