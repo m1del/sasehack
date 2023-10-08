@@ -1,22 +1,20 @@
+"use client";
+import test from "./test";
 import "../../../globals.css";
 import TopBar from "../../../components/TopBar";
-// async function getFood() {
-//   const pb = new PocketBase("http://127.0.0.1:8090");
+// Import the functions you need from the SDKs you need
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-//   await pb.admins.authWithPassword("tuan3dang@gmail.com", "pocketbase123");
-
-//   const data = await pb.collection("foods").getFullList();
-//   console.log(data);
-//   return data as any[];
-// }
-
-const tempFood = {
-  name: "banana",
-  purchase: "October 7th",
-};
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 export default async function FoodPage() {
-  // const foods = await getFood();
+  const tempFood = {
+    name: "banana",
+    purchase: "October 7th",
+  };
+  test();
   return (
     <>
       <TopBar page={"Kitchen (Freezer)"} />
