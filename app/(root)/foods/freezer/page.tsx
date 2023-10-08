@@ -1,5 +1,5 @@
-import "../../globals.css";
-import TopBar from "../../components/TopBar";
+import "../../../globals.css";
+import TopBar from "../../../components/TopBar";
 // async function getFood() {
 //   const pb = new PocketBase("http://127.0.0.1:8090");
 
@@ -19,7 +19,7 @@ export default async function FoodPage() {
   // const foods = await getFood();
   return (
     <>
-      <TopBar page={"Kitchen"} />
+      <TopBar page={"Kitchen (Freezer)"} />
       <div>
         <div className="food-list">
           <Food food={{ name: "banana", purchase: 5, expires: 6 }} />

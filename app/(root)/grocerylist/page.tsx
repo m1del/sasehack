@@ -1,4 +1,3 @@
-"use client";
 import "../../globals.css";
 import TopBar from "../../components/TopBar";
 // async function getFood() {
