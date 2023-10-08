@@ -47,9 +47,12 @@ body {
   background-color: #1a7278;
   display: flex;
   flex-direction: column;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .top-list {
+  padding-left: 0.8rem;
   display: flex;
   gap: 1.2rem;
 }
@@ -70,7 +73,7 @@ body {
 }
 
 .container {
-  width: 100%;
+  width: 90%;
   margin: auto;
 }
 
@@ -83,7 +86,8 @@ body {
   margin: 4rem 0;
 }
 
-.food_container {
+.food_container,
+.check_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -96,11 +100,11 @@ body {
 }
 
 .food_img {
-  width: 10rem;
+  width: 9rem;
 }
 
 .food_header {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .food_expire {
@@ -144,4 +148,32 @@ body {
   height: 4rem;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+
+.check_container {
+  height: 4rem;
+  padding: 1.6rem 3.2rem;
+}
+
+.check-input {
+  width: 20rem;
+}
+
+.gen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  margin: 1.6rem 3.2rem;
+}
+
+.btn-gen {
+  width: 30%;
+  color: #eee;
+  padding: 1.2rem 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #318086;
 }

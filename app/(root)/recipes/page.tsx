@@ -1,6 +1,6 @@
-"use client";
 import "../../globals.css";
 import TopBar from "../../components/TopBar";
+
 // async function getFood() {
 //   const pb = new PocketBase("http://127.0.0.1:8090");
 
@@ -20,16 +20,10 @@ export default async function FoodPage() {
   // const foods = await getFood();
   return (
     <>
-      <TopBar page={"Kitchen"} />
-      <div>
-        <div className="food-list">
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-        </div>
+      <TopBar page={"Recipe Generator"} />
+      <div className="gen-container">
+        <button className="btn-gen">Generate Recipe</button>
+        <textarea name="" id="" cols="40" rows="20"></textarea>
       </div>
     </>
   );
