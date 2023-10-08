@@ -1,5 +1,5 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../services/firebase.js"; // Adjust the path accordingly
+import { db } from "../services/firebase.js";
 
 async function queryData(location) {
   let q = null;
