@@ -1,0 +1,21 @@
+[debug] [2023-10-08T05:38:38.721Z] ----------------------------------------------------------------------
+[debug] [2023-10-08T05:38:38.723Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Matt\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-10-08T05:38:38.723Z] CLI Version:   12.6.2
+[debug] [2023-10-08T05:38:38.723Z] Platform:      win32
+[debug] [2023-10-08T05:38:38.724Z] Node Version:  v18.18.0
+[debug] [2023-10-08T05:38:38.725Z] Time:          Sun Oct 08 2023 01:38:38 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-10-08T05:38:38.725Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-08T05:38:38.736Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-08T05:38:38.737Z] > authorizing via signed-in user (anjema2003@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Matt\Desktop\SASEHacks\sasehack
+
