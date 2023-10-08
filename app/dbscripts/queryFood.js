@@ -11,8 +11,7 @@ async function queryData(location) {
   }
 
   const querySnapshot = await getDocs(q);
-  const foods = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })); // Map over documents and return their data
-  return foods;
+  return querySnapshot;
 }
 
 export default function fetchFoodByLocation(location) {
