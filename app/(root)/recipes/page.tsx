@@ -22,7 +22,7 @@ export default async function FoodPage() {
     <>
       <TopBar page={"Recipe Generator"} />
       <div className="gen-container">
-        <button className="btn-gen">Generate Recipe</button>
+        <button className="btn">Generate Recipe</button>
         <textarea name="" id="" cols="40" rows="20"></textarea>
       </div>
     </>

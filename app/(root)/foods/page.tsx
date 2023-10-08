@@ -3,6 +3,8 @@ import TopBar from "../../components/TopBar";
 import queryFood from "../../dbscripts/queryFood";
 
 export default async function FoodPage() {
+  const foods = await queryFood("fridge");
+  console.log(foods);
   return (
     <>
       <TopBar page={"Kitchen"} />

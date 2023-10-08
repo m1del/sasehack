@@ -82,6 +82,7 @@ body {
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
+  align-items: center;
   gap: 1.2rem;
   margin: 4rem 0;
 }
@@ -171,7 +172,7 @@ body {
   padding: 1.2rem;
 }
 
-.btn-gen {
+.btn {
   width: 30%;
   color: #eee;
   padding: 1.2rem 0;

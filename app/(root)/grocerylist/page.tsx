@@ -31,6 +31,7 @@ export default async function FoodPage() {
           <ListInput />
           <ListInput />
           <ListInput />
+          <button className="btn">Add Foods to Pantry</button>
         </div>
       </div>
     </>
