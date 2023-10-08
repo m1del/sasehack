@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { collection, getFirestore, addDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCVtfZM7u_K0StBgceDRkvofjdazzPkqzo",
@@ -11,14 +10,18 @@ const firebaseConfig = {
   appId: "1:204724751013:web:58e259085a8940645f5b4c",
   measurementId: "G-NLJ26MCSCL",
 };
+
+async function addData(name, location, daysTillExpire) {
+  const docRef = await addDoc(collection(db, "food"), {
+    name: name,
+    location: location,
+    daysTillExpire: daysTillExpire,
+  });
+}
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-export default async function test() {
+export default function test(name, location, daysTillExpire) {
+  addData(name, location, daysTillExpire);
   // Initialize Firebase
-  await setDoc(doc(db, "foods", "banana"), {
-    name: "banana",
-    purchase: 2,
-    expired: 3,
-    location: "fridge",
-  });
 }

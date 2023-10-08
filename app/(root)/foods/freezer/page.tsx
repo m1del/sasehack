@@ -1,5 +1,5 @@
-"use client";
-import test from "./test";
+import { use, cache } from "react";
+import test from "./addFood";
 import "../../../globals.css";
 import TopBar from "../../../components/TopBar";
 // Import the functions you need from the SDKs you need
@@ -8,13 +8,22 @@ import TopBar from "../../../components/TopBar";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCVtfZM7u_K0StBgceDRkvofjdazzPkqzo",
+  authDomain: "pantry-c664a.firebaseapp.com",
+  projectId: "pantry-c664a",
+  storageBucket: "pantry-c664a.appspot.com",
+  messagingSenderId: "204724751013",
+  appId: "1:204724751013:web:58e259085a8940645f5b4c",
+  measurementId: "G-NLJ26MCSCL",
+};
 
 export default async function FoodPage() {
+  test("banana", "fridge", 5);
   const tempFood = {
     name: "banana",
     purchase: "October 7th",
   };
-  test();
   return (
     <>
       <TopBar page={"Kitchen (Freezer)"} />
