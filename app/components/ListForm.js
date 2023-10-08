@@ -1,22 +1,51 @@
+import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
+import { db } from "../services/firebase.js";
+
 
 export default function ListForm() {
+  const [items, setItems] = useState([{ name: "", location: "pantry", bought: false }]);
+
+  const handleItemChange = (index, newItem) => {
+    const newItems = [...items];
+    newItems[index] = newItem;
+    setItems(newItems);
+  };
+
+  const addNewItem = () => {
+    setItems([...items, { name: "", location: "pantry", bought: false }]);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    // Filter the items that have been bought (checked)
+    const checkedItems = items.filter(item => item.bought);
+    
+    // Iterate through each checked item and add them to Firebase
+    for (const item of checkedItems) {
+      try {
+        await addDoc(collection(db, "food"), item);
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    }
+  };
+  
+
   return (
     <>
       <div>
         <div className="food-list">
-          <form>
-            <ListInput el={1} />
-            <ListInput el={2} />
-            <ListInput el={3} />
-            <ListInput el={4} />
-            <ListInput el={5} />
-            <ListInput el={6} />
-            <ListInput el={7} />
-            <ListInput el={8} />
-            <ListInput el={9} />
+          <form onSubmit={handleSubmit}>
+            {items.map((_, i) => (
+              <ListInput key={i} onChange={newItem => handleItemChange(i, newItem)} />
+            ))}
+            <button className="btn" type="button" onClick={addNewItem}>
+              Add More Items
+            </button>
             <button className="btn" type="submit">
-              Add Foods
+              Finish Shopping
             </button>
           </form>
         </div>
@@ -25,16 +54,34 @@ export default function ListForm() {
   );
 }
 
-function ListInput({ parentCallback, i }) {
-  function callParent() {
-    this.props.parentCallback();
-  }
+function ListInput({ onChange }) {
+  const [item, setItem] = useState({ name: "", location: "pantry", bought: false });
+
+  const handleInputChange = (field, value) => {
+    const newItem = { ...item, [field]: value };
+    setItem(newItem);
+    onChange(newItem);
+  };
+
   return (
     <div className="container">
       <div className="check_container">
-        <input className="checkbox" type="checkbox" />
-        <input className="check-input" type="text"></input>
-        <select>
+        <input
+          className="checkbox"
+          type="checkbox"
+          checked={item.bought}
+          onChange={e => handleInputChange("bought", e.target.checked)}
+        />
+        <input
+          className="check-input"
+          type="text"
+          value={item.name}
+          onChange={e => handleInputChange("name", e.target.value)}
+        />
+        <select
+          value={item.location}
+          onChange={e => handleInputChange("location", e.target.value)}
+        >
           <option value="pantry">Pantry</option>
           <option value="refrigerator">Fridge</option>
           <option value="freezer">Freezer</option>
