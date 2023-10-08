@@ -23,5 +23,4 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 export default function test(name, location, daysTillExpire) {
   addData(name, location, daysTillExpire);
-  // Initialize Firebase
 }

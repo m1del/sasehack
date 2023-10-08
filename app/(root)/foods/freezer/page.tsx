@@ -1,5 +1,6 @@
 import { use, cache } from "react";
-import test from "./addFood";
+import test from "../../../dbscripts/addFood";
+import deleteFood from "../../../dbscripts/deleteFood";
 import "../../../globals.css";
 import TopBar from "../../../components/TopBar";
 // Import the functions you need from the SDKs you need
@@ -19,7 +20,7 @@ const firebaseConfig = {
 };
 
 export default async function FoodPage() {
-  test("banana", "fridge", 5);
+  deleteFood("FldTtJUtFhRT6bxOCQgD");
   const tempFood = {
     name: "banana",
     purchase: "October 7th",
