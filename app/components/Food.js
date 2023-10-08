@@ -4,8 +4,7 @@ import { IconContext } from "react-icons";
 import { IoClose } from "react-icons/io5";
 
 function deleteData(id) {
-  // Replace the console.log here with code to delete the food from firebase (import deleteFood.js and run the correct function)
-  console.log("potato");
+  deleteData(id);
 }
 
 export default function Food({ id, name, purchase, expires, location }) {
@@ -22,8 +21,10 @@ export default function Food({ id, name, purchase, expires, location }) {
             <div>
               <IoClose
                 onClick={() => {
-                  // Call deleteData function to delete something from the database
-                  deleteData();
+                  deleteData(id);
+                  setTimeout(() => {
+                    window.location.reload();
+                  }, 450);
                 }}
               />
             </div>
