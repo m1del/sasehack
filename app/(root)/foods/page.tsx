@@ -1,5 +1,6 @@
 import "../../globals.css";
 import TopBar from "../../components/TopBar";
+import Food from "../../components/Food";
 import queryFood from "../../dbscripts/queryFood";
 
 export default async function FoodPage() {
@@ -27,23 +28,5 @@ export default async function FoodPage() {
         </div>
       </div>
     </>
-  );
-}
-
-function Food({ id, name, purchase, expires, location }: any) {
-  return (
-    <div className="container">
-      <div className="food_container">
-        <img className="food_img" src="/assets/banana.jpg" />
-        <div>
-          <h2 className="food_header">Food is {name}</h2>
-          <p className="food_expire">Expiring in {expires - purchase} days!</p>
-        </div>
-        <div className="food_subtext">
-          <h2>X oz</h2>
-          <p>{location}</p>
-        </div>
-      </div>
-    </div>
   );
 }
