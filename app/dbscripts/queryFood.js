@@ -1,5 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { collection, getFirestore, query, where } from "firebase/firestore";
+import {
+  collection,
+  getFirestore,
+  query,
+  where,
+  getDocs,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCVtfZM7u_K0StBgceDRkvofjdazzPkqzo",
@@ -11,16 +17,15 @@ const firebaseConfig = {
   measurementId: "G-NLJ26MCSCL",
 };
 
-async function addData(name, location, daysTillExpire) {
-  const docRef = await addDoc(collection(db, "food"), {
-    name: name,
-    location: location,
-    daysTillExpire: daysTillExpire,
-  });
+async function queryData(location) {
+  const q = query(collection(db, "food"), where("location", "==", location));
+
+  const querySnap = await getDocs(q);
+  return querySnap;
 }
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-export default function test(name, location, daysTillExpire) {
-  addData(name, location, daysTillExpire);
+export default function test(location) {
+  return queryData(location);
 }
