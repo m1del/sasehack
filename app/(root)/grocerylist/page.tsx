@@ -32,7 +32,7 @@ export default async function FoodPage() {
           <ListInput />
           <ListInput />
           <ListInput />
-          <button onClick="AddFoods()" className="btn">
+          <button onClick={() => {}} className="btn">
             Add Foods
           </button>
         </div>
