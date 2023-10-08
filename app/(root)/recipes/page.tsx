@@ -1,49 +1,34 @@
-import "../../globals.css";
-import TopBar from "../../components/TopBar";
+"use client";
+import { useEffect, useState } from 'react';
+import ExpiringFood from '../../components/ExpiringFood';
 
-// async function getFood() {
-//   const pb = new PocketBase("http://127.0.0.1:8090");
+function ExpiringFoodList() {
+    const [foods, setFoods] = useState([]);
 
-//   await pb.admins.authWithPassword("tuan3dang@gmail.com", "pocketbase123");
+    useEffect(() => {
+        async function fetchFoods() {
+            const res = await fetch('http://localhost:5000/expiring_ingredients');  // This endpoint should return more detailed data like id, purchase date, expiry date, location, etc.
+            const data = await res.json();
+            setFoods(data.foods);  // Assuming the Flask endpoint returns a `foods` key in the JSON
+        }
 
-//   const data = await pb.collection("foods").getFullList();
-//   console.log(data);
-//   return data as any[];
-// }
+        fetchFoods();
+    }, []);
 
-const tempFood = {
-  name: "banana",
-  purchase: "October 7th",
-};
-
-export default async function FoodPage() {
-  // const foods = await getFood();
-  return (
-    <>
-      <TopBar page={"Recipe Generator"} />
-      <div className="gen-container">
-        <button className="btn">Generate Recipe</button>
-        <textarea name="" id="" cols="40" rows="20"></textarea>
-      </div>
-    </>
-  );
-}
-
-function Food({ food }: any) {
-  const { id, name, purchase, expires } = food || {};
-  return (
-    <div className="container">
-      <div className="food_container">
-        <img className="food_img" src="/assets/banana.jpg" />
+    return (
         <div>
-          <h2 className="food_header">Food is {name}</h2>
-          <p className="food_expire">Expiring in {expires - purchase} days!</p>
+            {foods.map(food => (
+                <ExpiringFood 
+                    key={food.id} 
+                    id={food.id}
+                    name={food.name}
+                    purchase={food.purchase} // You might need to adjust the date format or calculation
+                    expires={food.expires}   // Same here
+                    location={food.location}
+                />
+            ))}
         </div>
-        <div className="food_subtext">
-          <h2>X oz</h2>
-          <p>Fridge</p>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
+
+export default ExpiringFoodList;
