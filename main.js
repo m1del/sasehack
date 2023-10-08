@@ -28,4 +28,3 @@ async function test() {
     location: fridge,
   });
 }
-const boatRef = doc(db, "boats", "alcyone");
