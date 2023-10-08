@@ -3,27 +3,34 @@ import TopBar from "../../components/TopBar";
 import queryFood from "../../dbscripts/queryFood";
 
 export default async function FoodPage() {
-  const foods = await queryFood("fridge");
-  console.log(foods);
+  const foodData = await queryFood("fridge");
+  const foods = [];
+  const ids = [];
+  foodData.forEach((doc) => {
+    foods.push({ id: doc.id, data: doc.data() });
+    ids.push(doc.id);
+  });
   return (
     <>
       <TopBar page={"Kitchen"} />
       <div>
         <div className="food-list">
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-          <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
+          {foods.map((food) => (
+            <Food
+              id={food.id}
+              name={food.data.name}
+              purchase={0}
+              expires={food.data.daysTillExpire}
+              location={food.data.location}
+            />
+          ))}
         </div>
       </div>
     </>
   );
 }
 
-function Food({ food }: any) {
-  const { id, name, purchase, expires } = food || {};
+function Food({ id, name, purchase, expires, location }: any) {
   return (
     <div className="container">
       <div className="food_container">
@@ -34,7 +41,7 @@ function Food({ food }: any) {
         </div>
         <div className="food_subtext">
           <h2>X oz</h2>
-          <p>Fridge</p>
+          <p>{location}</p>
         </div>
       </div>
     </div>
