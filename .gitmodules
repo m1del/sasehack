@@ -1,0 +1,3 @@
+[submodule "model-sasehack"]
+	path = model-sasehack
+	url = git@github.com:m1del/model-sasehack.git
