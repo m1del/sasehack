@@ -18,8 +18,8 @@ export default async function FoodPage() {
   // const foods = await getFood();
   return (
     <div>
-      <h1>Food Page</h1>
       <div className="food-list">
+        <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
         <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
         <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
         <Food food={{ name: "banana", purchase: 5, expires: 6 }} />

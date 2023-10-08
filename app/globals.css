@@ -44,7 +44,29 @@ body {
 
 .top-bar {
   height: 8rem;
-  background-color: red;
+  background-color: #1a7278;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-list {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.top-list button {
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  background-color: #1a7278;
+  border: 2px solid #fff;
+}
+
+.top-header {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding: 1.2rem;
 }
 
 .container {
@@ -58,7 +80,7 @@ body {
   flex-grow: 1;
   justify-content: space-between;
   gap: 1.2rem;
-  margin: 2rem 0;
+  margin: 4rem 0;
 }
 
 .food_container {
@@ -97,10 +119,9 @@ body {
   height: 8rem;
   width: 90%;
   margin: 0 auto;
-  background-color: blue;
+  background-color: #1a7278;
   border-radius: 30px;
 }
-
 .nav-list {
   width: 80;
   display: flex;
@@ -113,7 +134,7 @@ body {
 .nav-img {
   width: 2rem;
   height: 2rem;
-  background-color: red;
+  background-color: #edded4;
   border-radius: 50%;
   padding: 3rem;
 }
@@ -121,5 +142,6 @@ body {
 .nav-img img {
   width: 4rem;
   height: 4rem;
-  position: relative;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }

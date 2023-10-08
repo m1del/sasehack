@@ -18,30 +18,28 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <nav className="top-bar">
-          <ul className="top-list">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
+          <h1 className="top-header">Kitchen</h1>
+          <div className="top-list">
+            <button>All</button>
+            <button>Freezer</button>
+            <button>Fridge</button>
+            <button>Pantry</button>
+          </div>
         </nav>
         {children}
         <nav className="nav-bar">
           <ul className="nav-list">
-            <li>
-              <a href="">
-                <img className="nav-img" src="/assets/recipe.png" alt="" />
-              </a>
+            <li className="nav-img">
+              <img src="/assets/recipe.png" alt="" />
+              <a className="nav-link" href=""></a>
             </li>
-            <li>
-              <a href="">
-                <img className="nav-img" src="/assets/recipe.png" alt="" />
-              </a>
+            <li className="nav-img">
+              <img src="/assets/recipe.png" alt="" />
+              <a className="nav-link" href=""></a>
             </li>
-            <li>
-              <a href="">
-                <img className="nav-img" src="/assets/recipe.png" alt="" />
-              </a>
+            <li className="nav-img">
+              <img src="/assets/recipe.png" alt="" />
+              <a className="nav-link" href=""></a>
             </li>
             <li className="nav-img">
               <img src="/assets/recipe.png" alt="" />
