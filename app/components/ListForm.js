@@ -2,9 +2,10 @@ import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../services/firebase.js";
 
-
 export default function ListForm() {
-  const [items, setItems] = useState([{ name: "", location: "pantry", bought: false }]);
+  const [items, setItems] = useState([
+    { name: "", location: "pantry", bought: false },
+  ]);
 
   const handleItemChange = (index, newItem) => {
     const newItems = [...items];
@@ -13,15 +14,18 @@ export default function ListForm() {
   };
 
   const addNewItem = () => {
-    setItems([...items, { name: "", location: "pantry", bought: false }]);
+    setItems([
+      ...items,
+      { name: "", location: "pantry", daysTillExpire: 0, bought: false },
+    ]);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Filter the items that have been bought (checked)
-    const checkedItems = items.filter(item => item.bought);
-    
+    const checkedItems = items.filter((item) => item.bought);
+
     // Iterate through each checked item and add them to Firebase
     for (const item of checkedItems) {
       try {
@@ -31,7 +35,6 @@ export default function ListForm() {
       }
     }
   };
-  
 
   return (
     <>
@@ -39,7 +42,10 @@ export default function ListForm() {
         <div className="food-list">
           <form onSubmit={handleSubmit}>
             {items.map((_, i) => (
-              <ListInput key={i} onChange={newItem => handleItemChange(i, newItem)} />
+              <ListInput
+                key={i}
+                onChange={(newItem) => handleItemChange(i, newItem)}
+              />
             ))}
             <button className="btn" type="button" onClick={addNewItem}>
               Add More Items
@@ -55,7 +61,11 @@ export default function ListForm() {
 }
 
 function ListInput({ onChange }) {
-  const [item, setItem] = useState({ name: "", location: "pantry", bought: false });
+  const [item, setItem] = useState({
+    name: "",
+    location: "pantry",
+    bought: false,
+  });
 
   const handleInputChange = (field, value) => {
     const newItem = { ...item, [field]: value };
@@ -70,17 +80,17 @@ function ListInput({ onChange }) {
           className="checkbox"
           type="checkbox"
           checked={item.bought}
-          onChange={e => handleInputChange("bought", e.target.checked)}
+          onChange={(e) => handleInputChange("bought", e.target.checked)}
         />
         <input
           className="check-input"
           type="text"
           value={item.name}
-          onChange={e => handleInputChange("name", e.target.value)}
+          onChange={(e) => handleInputChange("name", e.target.value)}
         />
         <select
           value={item.location}
-          onChange={e => handleInputChange("location", e.target.value)}
+          onChange={(e) => handleInputChange("location", e.target.value)}
         >
           <option value="pantry">Pantry</option>
           <option value="refrigerator">Fridge</option>
