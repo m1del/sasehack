@@ -19,11 +19,13 @@ export default async function FoodPage() {
   return (
     <div>
       <h1>Food Page</h1>
-      <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-      <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-      <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-      <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
-      <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
+      <div className="food-list">
+        <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
+        <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
+        <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
+        <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
+        <Food food={{ name: "banana", purchase: 5, expires: 6 }} />
+      </div>
     </div>
   );
 }
@@ -34,7 +36,7 @@ function Food({ food }: any) {
     <div className="container">
       <div className="food_container">
         <img className="food_img" src="/assets/banana.jpg" />
-        <div className="first">
+        <div>
           <h2 className="food_header">Food is {name}</h2>
           <p className="food_expire">Expiring in {expires - purchase} days!</p>
         </div>

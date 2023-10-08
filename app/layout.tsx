@@ -28,10 +28,25 @@ export default function RootLayout({
         {children}
         <nav className="nav-bar">
           <ul className="nav-list">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <a href="">
+                <img className="nav-img" src="/assets/recipe.png" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img className="nav-img" src="/assets/recipe.png" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img className="nav-img" src="/assets/recipe.png" alt="" />
+              </a>
+            </li>
+            <li className="nav-img">
+              <img src="/assets/recipe.png" alt="" />
+              <a className="nav-link" href=""></a>
+            </li>
           </ul>
         </nav>
       </body>
