@@ -167,6 +167,10 @@ body {
   margin: 1.6rem 3.2rem;
 }
 
+.gen-container textarea {
+  padding: 1.2rem;
+}
+
 .btn-gen {
   width: 30%;
   color: #eee;
