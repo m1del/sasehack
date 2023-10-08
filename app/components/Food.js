@@ -23,6 +23,7 @@ export default function Food({ id, name, purchase, expires, location }) {
               <IoClose
                 onClick={() => {
                   // Call deleteData function to delete something from the database
+                  deleteData();
                 }}
               />
             </div>

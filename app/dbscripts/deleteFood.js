@@ -11,10 +11,6 @@ const firebaseConfig = {
   measurementId: "G-NLJ26MCSCL",
 };
 
-async function deleteData(id) {
-  const docRef = await deleteDoc(doc(db, "food", id));
-}
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 export default function deleteFood(id) {
