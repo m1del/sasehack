@@ -10,6 +10,9 @@ const firebaseConfig = {
   appId: "1:204724751013:web:58e259085a8940645f5b4c",
   measurementId: "G-NLJ26MCSCL",
 };
+async function deleteData(id) {
+  const docRef = await deleteDoc(doc(db, "food", id));
+}
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
