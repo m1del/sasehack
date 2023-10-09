@@ -1,10 +1,9 @@
-"use client"; 
+"use client";
 import { useState } from "react";
 import ListForm from "../../components/ListForm";
 import TopBar from "../../components/TopBar";
 import TypeAnim from "../../components/TypeAnim";
 import "../../globals.css";
-
 
 export default async function FoodPage() {
   return (
@@ -12,8 +11,7 @@ export default async function FoodPage() {
       <TopBar page={"Grocery List"} />
       <div>
         <div className="food-list">
-          <ListForm/>
-          <button className="btn">Add Foods</button>
+          <ListForm />
         </div>
       </div>
     </>

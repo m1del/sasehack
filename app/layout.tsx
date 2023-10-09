@@ -16,13 +16,13 @@ export default function RootLayout({
         <nav className="nav-bar">
           <ul className="nav-list">
             <li className="nav-img">
-              <a className="nav-link" href="/foods">
-                <img src="/assets/backpack.png" alt="" />
+              <a className="nav-link" href="/grocerylist">
+                <img src="/assets/list.png" alt="" />
               </a>
             </li>
             <li className="nav-img">
-              <a className="nav-link" href="/grocerylist">
-                <img src="/assets/list.png" alt="" />
+              <a className="nav-link" href="/foods">
+                <img src="/assets/backpack.png" alt="" />
               </a>
             </li>
             <li className="nav-img">

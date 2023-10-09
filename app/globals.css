@@ -39,12 +39,12 @@ body {
   font-family: "Source Sans 3", sans-serif;
   line-height: 1;
   font-weight: 400;
-  background-color: #FAF9F6;
+  background-color: #faf9f6;
 }
 
 .top-bar {
   height: 8rem;
-  background-color: #87D7DF;
+  background-color: #87d7df;
   display: flex;
   flex-direction: column;
   border-bottom-left-radius: 20px;
@@ -124,7 +124,7 @@ body {
   height: 8rem;
   width: 90%;
   margin: 0 auto;
-  background-color: #84D7DF;
+  background-color: #84d7df;
   border-radius: 30px;
 }
 .nav-list {
@@ -139,7 +139,7 @@ body {
 .nav-img {
   width: 2rem;
   height: 2rem;
-  background-color: #FAF9F6;
+  background-color: #faf9f6;
   border-radius: 50%;
   padding: 3rem;
 }
@@ -181,4 +181,13 @@ body {
   text-align: center;
   border-radius: 8px;
   background-color: #318086;
+}
+
+.list-item {
+  margin-bottom: 2.4rem;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-around;
 }

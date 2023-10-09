@@ -67,12 +67,14 @@ export default function ListForm() {
                 onChange={(newItem) => handleItemChange(i, newItem)}
               />
             ))}
-            <button className="btn" type="button" onClick={addNewItem}>
-              Add More Items
-            </button>
-            <button className="btn" type="submit">
-              Finish Shopping
-            </button>
+            <div className="btns">
+              <button className="btn" type="button" onClick={addNewItem}>
+                Add More Items
+              </button>
+              <button className="btn" type="submit">
+                Finish Shopping
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -94,7 +96,7 @@ function ListInput({ onChange }) {
   };
 
   return (
-    <div className="container">
+    <div className="container list-item">
       <div className="check_container">
         <input
           className="checkbox"
