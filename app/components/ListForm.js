@@ -7,6 +7,23 @@ export default function ListForm() {
     { name: "", location: "pantry", bought: false },
   ]);
 
+  const updateExpirationDates = async () => {
+    try {
+      // Assuming your backend is running on localhost:5000
+      const response = await fetch("http://localhost:5000/update_expirations", {
+        method: "POST",
+      });
+      const data = await response.json();
+      if (data.status === "success") {
+        console.log(data.message);
+      } else {
+        console.error(data.message);
+      }
+    } catch (error) {
+      console.error("Failed to update expiration dates:", error);
+    }
+  };
+
   const handleItemChange = (index, newItem) => {
     const newItems = [...items];
     newItems[index] = newItem;
@@ -34,6 +51,9 @@ export default function ListForm() {
         console.error("Error adding document: ", error);
       }
     }
+    
+    // After adding the items to Firestore, update their expiration dates
+    await updateExpirationDates();
   };
 
   return (
