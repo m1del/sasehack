@@ -2,9 +2,10 @@
 import { useState } from "react";
 import { IconContext } from "react-icons";
 import { IoClose } from "react-icons/io5";
+import deleteFood from "../dbscripts/deleteFood";
 
 function deleteData(id) {
-  deleteData(id);
+  deleteFood(id);
 }
 
 export default function Food({ id, name, purchase, expires, location }) {
