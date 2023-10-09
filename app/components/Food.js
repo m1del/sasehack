@@ -9,12 +9,18 @@ function deleteData(id) {
 }
 
 export default function Food({ id, name, purchase, expires, location }) {
+  let address = "";
+  if (name == "bananas") {
+    address = "/assets/banana.jpg";
+  } else {
+    address = "/assets/chicken.png";
+  }
   return (
     <div className="container">
       <div className="food_container">
-        <img className="food_img" src="/assets/banana.jpg" />
+        <img className="food_img" src={address} />
         <div>
-          <h2 className="food_header">Food is {name}</h2>
+          <h2 className="food_header">{name}</h2>
           <p className="food_expire">Expiring in {expires - purchase} days!</p>
         </div>
         <div className="food_subtext">
