@@ -1,10 +1,11 @@
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
+import addFood from '../dbscripts/addFood.js';
 import { db } from "../services/firebase.js";
 
 export default function ListForm() {
   const [items, setItems] = useState([
-    { name: "", location: "pantry", bought: false },
+    { name: "", location: "pantry"},
   ]);
 
   const updateExpirationDates = async () => {
@@ -24,37 +25,28 @@ export default function ListForm() {
     }
   };
 
-  const handleItemChange = (index, newItem) => {
-    const newItems = [...items];
-    newItems[index] = newItem;
-    setItems(newItems);
-  };
-
   const addNewItem = () => {
-    setItems([
-      ...items,
-      { name: "", location: "pantry", daysTillExpire: 0, bought: false },
-    ]);
+    setItems([...items, { name: "", location: "pantry" }]);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Filter the items that have been bought (checked)
-    const checkedItems = items.filter((item) => item.bought);
-
-    // Iterate through each checked item and add them to Firebase
-    for (const item of checkedItems) {
-      try {
-        await addDoc(collection(db, "food"), item);
-      } catch (error) {
-        console.error("Error adding document: ", error);
-      }
+    // Iterate through each item and add them to Firebase
+    for (const item of items) {
+      await addFood(item.name, item.location, 0);
     }
     
-    // After adding the items to Firestore, update their expiration dates
+    // Update expiration dates after adding the items
     await updateExpirationDates();
   };
+
+  const handleItemChange = (index, newItem) => {
+    const newItems = [...items];
+    newItems[index] = newItem;
+    setItems(newItems);
+  };
+  
 
   return (
     <>

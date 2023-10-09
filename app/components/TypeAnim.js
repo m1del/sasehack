@@ -1,22 +1,17 @@
 "use client"
-import {TypeAnimation} from "react-type-animation";
+import { TypeAnimation } from "react-type-animation";
 
 function TypeAnim() {
     return (
       <div>
         <TypeAnimation
         sequence={[
-          'Grocery',
-          500,
+          "I have most cookware available at my disposal such as a stove, oven, microwave, air fryer, toaster, kettle, along with utensils like kitchen knives, spatulas, etc. ",
           'Grocery List',
-          500,
-          'Grocery',
-          500,
-          '',
           500,
         ]}
         style={{ fontSize: '2em' }}
-        repeat={Infinity}
+        repeat={0}
         />
       </div>
     );

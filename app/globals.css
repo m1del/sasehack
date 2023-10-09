@@ -191,3 +191,20 @@ body {
   display: flex;
   justify-content: space-around;
 }
+
+.expire_container{
+  display: flex;
+}
+
+
+.flex-expired{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 4rem;
+}
+
+.flex-expired textarea{
+  margin: 8rem 1rem
+}
