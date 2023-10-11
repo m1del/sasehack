@@ -106,6 +106,7 @@ body {
 
 .food_header {
   font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .food_expire {
@@ -172,15 +173,24 @@ body {
   padding: 1.2rem;
 }
 
-.btn {
+.btn,
+.btn:link,
+.btn:visited {
   width: 30%;
   color: #eee;
   padding: 1.2rem 0;
   font-weight: 600;
   font-size: 1.8rem;
   text-align: center;
+  cursor: pointer;
   border-radius: 8px;
   background-color: #318086;
+  transition: all 0.3s;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #1d4d50;
 }
 
 .list-item {
@@ -192,12 +202,11 @@ body {
   justify-content: space-around;
 }
 
-.expire_container{
+.expire_container {
   display: flex;
 }
 
-
-.flex-expired{
+.flex-expired {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -205,6 +214,6 @@ body {
   margin-top: 4rem;
 }
 
-.flex-expired textarea{
-  margin: 8rem 1rem
+.flex-expired textarea {
+  margin: 8rem 1rem;
 }
