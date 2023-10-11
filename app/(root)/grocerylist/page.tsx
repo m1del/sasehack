@@ -17,19 +17,3 @@ export default async function FoodPage() {
     </>
   );
 }
-
-// function ListInput() {
-//   return (
-//     <div className="container">
-//       <div className="check_container">
-//         <input className="checkbox" type="checkbox" />
-//         <input className="check-input" type="text"></input>
-//         <select>
-//           <option value="pantry">Pantry</option>
-//           <option value="refrigerator">Fridge</option>
-//           <option value="freezer">Freezer</option>
-//         </select>
-//       </div>
-//     </div>
-//   );
-// }
