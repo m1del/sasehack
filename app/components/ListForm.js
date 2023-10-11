@@ -8,7 +8,6 @@ export default function ListForm() {
 
   const updateExpirationDates = async () => {
     try {
-      // Assuming your backend is running on localhost:5000
       const response = await fetch("http://localhost:5000/update_expirations", {
         method: "POST",
       });
@@ -47,27 +46,30 @@ export default function ListForm() {
 
   return (
     <>
-      <div>
-        <div className="food-list">
-          <form onSubmit={handleSubmit}>
-            {items.map((_, i) => (
-              <ListInput
-                key={i}
-                onChange={(newItem) => handleItemChange(i, newItem)}
-              />
-            ))}
-            <div className="btns">
-              <button className="btn" type="button" onClick={addNewItem}>
-                Add More Items
-              </button>
-              <button className="btn" type="submit">
-                Finish Shopping
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+ 
     </>
+    // <>
+    //   <div>
+    //     <div className="food-list">
+    //       <form onSubmit={handleSubmit}>
+    //         {items.map((_, i) => (
+    //           <ListInput
+    //             key={i}
+    //             onChange={(newItem) => handleItemChange(i, newItem)}
+    //           />
+    //         ))}
+    //         <div className="btns">
+    //           <button className="btn" type="button" onClick={addNewItem}>
+    //             Add More Items
+    //           </button>
+    //           <button className="btn" type="submit">
+    //             Finish Shopping
+    //           </button>
+    //         </div>
+    //       </form>
+    //     </div>
+    //   </div>
+    // </>
   );
 }
 

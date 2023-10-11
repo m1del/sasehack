@@ -1,7 +1,7 @@
-import "../../globals.css";
-import TopBar from "../../components/TopBar";
 import Food from "../../components/Food";
+import TopBar from "../../components/TopBar";
 import queryFood from "../../dbscripts/queryFood";
+import "../../globals.scss";
 
 export default async function FoodPage() {
   const foodData = await queryFood("all");
