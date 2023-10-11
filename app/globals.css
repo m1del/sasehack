@@ -44,7 +44,7 @@ body {
 
 .main-page{
   /* Viewport on host device */
-  min-height: 800px; 
+  min-height: 700px; 
 }
 
 .top-bar {
@@ -106,7 +106,9 @@ body {
 }
 
 .food_img {
-  height: 60px;
+  padding: 10px;
+  height: 80px;
+  width: 80px;
 }
 
 .food_header {
