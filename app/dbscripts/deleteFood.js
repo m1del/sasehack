@@ -6,7 +6,7 @@ async function deleteData(id) {
 }
 
 function deleteFood(id) {
-  deleteData(id);
+  return deleteData(id);
 }
 
 export default deleteFood;

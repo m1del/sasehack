@@ -1,12 +1,10 @@
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
-import addFood from '../dbscripts/addFood.js';
+import addFood from "../dbscripts/addFood.js";
 import { db } from "../services/firebase.js";
 
 export default function ListForm() {
-  const [items, setItems] = useState([
-    { name: "", location: "pantry"},
-  ]);
+  const [items, setItems] = useState([{ name: "", location: "pantry" }]);
 
   const updateExpirationDates = async () => {
     try {
@@ -36,7 +34,7 @@ export default function ListForm() {
     for (const item of items) {
       await addFood(item.name, item.location, 0);
     }
-    
+
     // Update expiration dates after adding the items
     await updateExpirationDates();
   };
@@ -46,7 +44,6 @@ export default function ListForm() {
     newItems[index] = newItem;
     setItems(newItems);
   };
-  
 
   return (
     <>
@@ -107,7 +104,7 @@ function ListInput({ onChange }) {
           onChange={(e) => handleInputChange("location", e.target.value)}
         >
           <option value="pantry">Pantry</option>
-          <option value="refrigerator">Fridge</option>
+          <option value="fridge">Fridge</option>
           <option value="freezer">Freezer</option>
         </select>
       </div>
