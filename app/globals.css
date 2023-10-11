@@ -42,6 +42,11 @@ body {
   background-color: #faf9f6;
 }
 
+.main-page{
+  /* Viewport on host device */
+  min-height: 800px; 
+}
+
 .top-bar {
   height: 8rem;
   background-color: #87d7df;
@@ -101,7 +106,7 @@ body {
 }
 
 .food_img {
-  width: 9rem;
+  height: 60px;
 }
 
 .food_header {
