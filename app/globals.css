@@ -42,9 +42,9 @@ body {
   background-color: #faf9f6;
 }
 
-.main-page{
+.main-page {
   /* Viewport on host device */
-  min-height: 700px; 
+  min-height: 700px;
 }
 
 .top-bar {
@@ -103,6 +103,7 @@ body {
   border-radius: 15px;
   overflow: hidden;
   padding: 0 1.6rem;
+  text-align: left;
 }
 
 .food_img {
@@ -209,10 +210,9 @@ body {
   justify-content: space-around;
 }
 
-.expire_container {
+.expired-foods {
   display: flex;
 }
-
 .flex-expired {
   display: flex;
   flex-direction: column;
