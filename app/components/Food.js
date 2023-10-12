@@ -9,6 +9,8 @@ function deleteData(id) {
 }
 
 export default function Food({ id, name, purchase, expires, location }) {
+  const [hidden, setHidden] = useState(false);
+  const containerClass = hidden ? "container hidden" : "container";
   let address = "";
   const nameArr = name.split(" ");
   const nameUpper = nameArr.map(
@@ -22,7 +24,7 @@ export default function Food({ id, name, purchase, expires, location }) {
 
   const color = expires > 3 ? "green" : "red";
   return (
-    <div className="container">
+    <div className={containerClass}>
       <div className="food_container">
         <img className="food_img" src={address} />
         <div>
@@ -36,6 +38,7 @@ export default function Food({ id, name, purchase, expires, location }) {
             <div>
               <IoClose
                 onClick={async () => {
+                  setHidden(true);
                   const res = await deleteData(id);
                   const refresh = await window.location.reload();
                 }}

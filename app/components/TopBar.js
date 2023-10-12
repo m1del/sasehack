@@ -3,9 +3,12 @@ import { IconContext } from "react-icons";
 import { IoAddOutline } from "react-icons/io5";
 
 function TopBar({ page }) {
+  const headerSize = page.includes("Kitchen") ? "3rem" : "3.8rem";
   return (
     <nav className="top-bar">
-      <h1 className="top-header">{page}</h1>
+      <h1 className="top-header" style={{ fontSize: headerSize }}>
+        {page}
+      </h1>
       {page.includes("Kitchen") && (
         <div className="top-list">
           <a href="/foods">
@@ -20,11 +23,6 @@ function TopBar({ page }) {
           <a href="/foods/freezer">
             <button>Freezer</button>
           </a>
-          <IconContext.Provider value={{ color: "white", size: "2.4rem" }}>
-            <div>
-              <IoAddOutline />
-            </div>
-          </IconContext.Provider>
         </div>
       )}
     </nav>
