@@ -16,17 +16,16 @@ export default function Food({ id, name, purchase, expires, location }) {
   const nameUpper = nameArr.map(
     (word) => word.charAt(0).toUpperCase() + word.slice(1)
   );
-  if (name == "bananas") {
-    address = "/assets/banana.jpg";
-  } else {
-    address = "/assets/chicken.png";
-  }
 
+  function getImagePath(foodName) {
+    return `/assets/${foodName.toLowerCase()}.png`;
+  }
+  
   const color = expires > 3 ? "green" : "red";
   return (
     <div className={containerClass}>
       <div className="food_container">
-        <img className="food_img" src={address} />
+        <img className="food_img" src={getImagePath(name)}  />
         <div>
           <h2 className="food_header">{nameUpper.join(" ")}</h2>
           <p className="food_expire" style={{ color: color }}>
