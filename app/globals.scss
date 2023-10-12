@@ -329,6 +329,27 @@ option {
   padding: 3rem;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.nav-img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.fadeIn {
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+
 .nav-img img {
   width: 4rem;
   height: 4rem;

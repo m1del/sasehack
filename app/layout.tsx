@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import TopBar from "./components/TopBar";
+import Navbar from "./components/Navbar";
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,7 +15,8 @@ export default function RootLayout({
         <div className="main-page">
           <div>{children}</div>
         </div>
-        <nav className="nav-bar">
+        <Navbar/>
+        {/* <nav className="nav-bar">
           <ul className="nav-list">
             <li className="nav-img">
               <a className="nav-link" href="/grocerylist">
@@ -38,7 +39,7 @@ export default function RootLayout({
               </a>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </body>
     </html>
   );
