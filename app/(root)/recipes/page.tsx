@@ -7,17 +7,39 @@ import TypeAnim from "@/app/components/TypeAnim";
 config();
 
 function ExpiringFoodList() {
+  const [expire, setExpire] = useState([]);
+  const [recipe, setRecipe] = useState("Pinging OpenAi...");
+  const [repeat, setRepeat] = useState(Infinity);
   useEffect(() => {
     async function fetchFoods() {
-      const res = await fetch("http://localhost:5000/expiring_ingredients", {
-        method: "GET",
-      });
-      const data = await res.json();
-      console.log("Data type:", typeof data);
-      console.log("Data content:", data);
-      console.log(res);
+      try {
+        const response = await fetch(
+          "http://127.0.0.1:5000/expiring_ingredients",
+          {
+            method: "GET",
+          }
+        );
+        const data = await response.json();
+        setExpire(data.expiring_ingredients);
+      } catch (error) {
+        console.error("Failed to update expiration dates:", error);
+      }
     }
     fetchFoods();
+    async function makeRecipe() {
+      try {
+        console.log("pinging openAI...");
+        const response = await fetch("http://127.0.0.1:5000/get_recipe", {
+          method: "GET",
+        });
+        const data = await response.json();
+        console.log(data);
+        setRecipe(data.recipe);
+      } catch (error) {
+        console.error("Failed to update expiration dates:", error);
+      }
+    }
+    makeRecipe();
   }, []);
 
   const prompt =
@@ -33,12 +55,13 @@ function ExpiringFoodList() {
       <TopBar page="Recipe" />
       <div className="flex-expired">
         <div className="expired-foods">
-          <ExpiringFood name={"spaghetti"} expires={2} />
-          <ExpiringFood name={"meatballs"} expires={2} />
+          {expire.map((food) => (
+            <ExpiringFood name={food[0]} expires={food[1]} />
+          ))}
         </div>
 
         <div className="text-box">
-          <TypeAnim />
+          <TypeAnim text={recipe} inf={Infinity} />
         </div>
       </div>
     </>

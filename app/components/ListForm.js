@@ -48,7 +48,7 @@ export default function ListForm() {
     // Update expiration dates after adding the items
     const _ = await updateExpirationDates();
     setTimeout(function () {
-      window.location.href = "/foods";
+      window.location.href = "/grocerylist";
     }, 600);
   };
 
