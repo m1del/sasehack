@@ -26,7 +26,7 @@
 /* REUSABLES */
 
 :root {
-  --form-control-color:#197278;
+  --form-control-color: #197278;
   --form-control-disabled: #f9f9f9;
 }
 
@@ -60,9 +60,10 @@ body {
 
 .top-bar {
   height: 8rem;
-  background-color: #87d7df;
+  background-color: #197278;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -83,7 +84,7 @@ body {
 
 .top-header {
   color: #fff;
-  font-size: 2.2rem;
+  font-size: 3.8rem;
   font-weight: 600;
   padding: 1.2rem;
 }
@@ -163,7 +164,6 @@ select:disabled {
   cursor: not-allowed;
 }
 
-
 input[type="text"] {
   -webkit-appearance: none;
   appearance: none;
@@ -175,7 +175,7 @@ input[type="text"] {
   max-width: 200px;
   height: 2.5rem;
   border: 0.1rem solid currentColor;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   padding: 1.6rem;
   transition: border-color 0.3s ease;
   padding-left: 0.5rem;
@@ -201,10 +201,11 @@ select {
   font-size: inherit;
   cursor: pointer;
   border-radius: 0.8rem;
-  height:3.5rem;
+  height: 3.5rem;
   padding-left: 0.5rem;
   transition: border-color 0.3s ease;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") no-repeat right 0.5em center;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>")
+    no-repeat right 0.5em center;
   padding-right: 2rem;
   width: 100px;
 }
@@ -216,10 +217,9 @@ select:focus {
 
 select:disabled {
   --form-control-color: var(--form-control-disabled, black);
-  color: var(--form-control-disabled,black);
+  color: var(--form-control-disabled, black);
   cursor: not-allowed;
 }
-
 
 .food_container,
 .check_container {
@@ -262,7 +262,7 @@ select:disabled {
   height: 8rem;
   width: 90%;
   margin: 0 auto;
-  background-color: #84d7df;
+  background-color: #197278;
   border-radius: 30px;
 }
 .nav-list {
@@ -341,7 +341,20 @@ select:disabled {
 
 .expired-foods {
   display: flex;
+  justify-content: center;
+  gap: 1.4rem;
 }
+
+.expire_container {
+  display: flex;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding-right: 15px;
+  border: 0.2rem solid rgba(37, 37, 37, 0.2);
+}
+
 .flex-expired {
   display: flex;
   flex-direction: column;
@@ -351,5 +364,28 @@ select:disabled {
 }
 
 .flex-expired textarea {
-  margin: 8rem 1rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin: 0rem 1rem;
+  margin-top: 2rem;
+}
+
+.recipe-header {
+  text-align: center;
+  background-color: #faf9f6;
+  margin-top: 1.2rem;
+}
+
+.text-box {
+  margin: 0 auto;
+  width: 93%;
+  height: 465px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 2rem;
+  padding-top: 0rem;
+  overflow-y: auto;
+  border: 0.2rem solid rgba(37, 37, 37, 0.2);
 }
