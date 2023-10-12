@@ -1,11 +1,18 @@
-import { useState } from "react";
-import { IconContext } from "react-icons";
-import { IoClose } from "react-icons/io5";
+"use client";
+import Image from 'next/image';
 
-function deleteData(id) {
-  deleteData(id);
-}
 
 export default function Home() {
-  return <div className="container"></div>;
+
+  return (
+    <div className='home-page'>
+      <Image
+        src="/logo.png"
+        alt="logo"
+        width={200}
+        height={200}
+        className='home-logo'
+      />
+    </div>
+  );
 }
