@@ -204,8 +204,8 @@ select {
   height: 3.5rem;
   padding-left: 0.5rem;
   transition: border-color 0.3s ease;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>")
-    no-repeat right 0.5em center;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23FFFFFF' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") no-repeat right 0.5em center, linear-gradient(to bottom, #197278 0%,#197278 100%);
+  color: #fff;
   padding-right: 2rem;
   width: 100px;
 }
@@ -220,6 +220,12 @@ select:disabled {
   color: var(--form-control-disabled, black);
   cursor: not-allowed;
 }
+
+option {
+  background-color: #197278;
+  color: #fff;
+}
+
 
 .food_container,
 .check_container {
