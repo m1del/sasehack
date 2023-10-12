@@ -10,7 +10,7 @@ export default async function FoodPage() {
     <>
       <TopBar page={"Grocery List"} />
       <div>
-        <div className="food-list">
+        <div>
           <ListForm />
         </div>
       </div>
