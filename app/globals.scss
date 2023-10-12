@@ -301,6 +301,11 @@ option {
   font-size: 1.2rem;
 }
 
+nav {
+  z-index: 1000;
+  position: sticky;
+}
+
 .nav-bar {
   display: flex;
   align-items: center;
