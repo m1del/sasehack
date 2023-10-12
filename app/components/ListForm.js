@@ -46,7 +46,39 @@ export default function ListForm() {
 
   return (
     <>
- 
+      <div className="food-list">
+        <form onSubmit={handleSubmit}>
+          {items.map((_, i) => (
+            <ListInput
+              key={i}
+              onChange={(newItem) => handleItemChange(i, newItem)}
+            />
+          ))}
+          <div className="btns">
+            <button className="btn" type="button" onClick={addNewItem}>
+              Add More Items
+            </button>
+            <button className="btn" type="submit">
+              Finish Shopping
+            </button>
+          </div>
+        </form>
+      </div>
+
+
+      {/* <form action="">
+        <div class="form-control">
+          <input type="checkbox" name="checkbox" />
+          <input type="text" name="text-input" placeholder="Enter text" />
+          <select name="dropdown">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
+      </form> */}
+
+
     </>
     // <>
     //   <div>
@@ -87,29 +119,26 @@ function ListInput({ onChange }) {
   };
 
   return (
-    <div className="container list-item">
-      <div className="check_container">
-        <input
-          className="checkbox"
-          type="checkbox"
-          checked={item.bought}
-          onChange={(e) => handleInputChange("bought", e.target.checked)}
-        />
-        <input
-          className="check-input"
-          type="text"
-          value={item.name}
-          onChange={(e) => handleInputChange("name", e.target.value)}
-        />
-        <select
-          value={item.location}
-          onChange={(e) => handleInputChange("location", e.target.value)}
-        >
-          <option value="pantry">Pantry</option>
-          <option value="fridge">Fridge</option>
-          <option value="freezer">Freezer</option>
-        </select>
-      </div>
+    <div className="form-control">
+      <input
+        type="checkbox"
+        checked={item.bought}
+        onChange={(e) => handleInputChange("bought", e.target.checked)}
+      />
+      <input
+        type="text"
+        value={item.name}
+        placeholder="Enter text"
+        onChange={(e) => handleInputChange("name", e.target.value)}
+      />
+      <select
+        value={item.location}
+        onChange={(e) => handleInputChange("location", e.target.value)}
+      >
+        <option value="pantry">Pantry</option>
+        <option value="fridge">Fridge</option>
+        <option value="freezer">Freezer</option>
+      </select>
     </div>
   );
 }

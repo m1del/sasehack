@@ -25,6 +25,17 @@
 
 /* REUSABLES */
 
+:root {
+  --form-control-color:#197278;
+  --form-control-disabled: #f9f9f9;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -92,8 +103,33 @@ body {
   margin: 4rem 0;
 }
 
+.form-control {
+  font-family: system-ui, sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: flex;
+  grid-template-columns: 1em auto 1fr;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
 input[type="checkbox"] {
-  /* ...existing styles */
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background, #fff);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.1rem solid currentColor;
+  border-radius: 0.5rem;
+  transform: translateY(-0.075em);
   display: grid;
   place-content: center;
 }
@@ -102,13 +138,86 @@ input[type="checkbox"]::before {
   content: "";
   width: 0.65em;
   height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   transform: scale(0);
+  transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--form-control-color);
+  box-shadow: inset 1rem 1rem var(--form-control-color, #000);
+  background-color: CanvasText;
 }
 
 input[type="checkbox"]:checked::before {
   transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.1rem) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled,
+input[type="text"]:disabled,
+select:disabled {
+  --form-control-color: var(--form-control-disabled, #ccc);
+  color: var(--form-control-disabled, #ccc);
+  cursor: not-allowed;
+}
+
+
+input[type="text"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background, #fff);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  max-width: 200px;
+  height: 2.5rem;
+  border: 0.1rem solid currentColor;
+  border-radius: .8rem;
+  padding: 1.6rem;
+  transition: border-color 0.3s ease;
+  padding-left: 0.5rem;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--focus-border-color, #4a90e2);
+}
+
+input[type="text"]:disabled {
+  --form-control-color: var(--form-control-disabled, #ccc);
+  color: var(--form-control-disabled, #ccc);
+  cursor: not-allowed;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: (#fff);
+  color: currentColor;
+  font-size: inherit;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  height:3.5rem;
+  padding-left: 0.5rem;
+  transition: border-color 0.3s ease;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") no-repeat right 0.5em center;
+  padding-right: 2rem;
+  width: 100px;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--focus-border-color, black);
+}
+
+select:disabled {
+  --form-control-color: var(--form-control-disabled, black);
+  color: var(--form-control-disabled,black);
+  cursor: not-allowed;
 }
 
 
