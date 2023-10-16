@@ -22,8 +22,8 @@ At this time, our website does not support a full desktop experience.
 
 Next, run the backend server, this will require three things:
 1. Have a python environment with all the necessary packages installed.
-2. Have a firebase account with firebase credentials in a services/firebase.js file
-3. Have the necessary API tokens for HuggingFace and OpenAI
+2. Have a firebase account with firebase credentials in a services/firebase.js file.
+3. Have the necessary API tokens for HuggingFace and OpenAI.
    
 Then:
 
