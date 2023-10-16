@@ -28,5 +28,6 @@ Next, run the backend server, this will require three things:
 Then:
 
 ```bash
+cd model-sasehack
 python server.py
 ```
