@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-### View a demo here:
+### Click below to view a demo:
 [![Pocket-Pantry-Demo](https://img.youtube.com/vi/RQ5utcfLwe8/0.jpg)](https://www.youtube.com/watch?v=RQ5utcfLwe8)
 
 ## Getting Started
